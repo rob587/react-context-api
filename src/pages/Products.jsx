@@ -1,11 +1,17 @@
 import React, {useEffect, useState } from 'react'
 import axios from 'axios'
+import { useContext} from 'react'
+import  {CountContext} from '../contexts/BudgetContext'
+
 
 import { Link } from 'react-router-dom'
 
 
 const Products = () => {
+
   
+  const {budgetMode} = useContext(CountContext)
+
   const [products, setProducts] = useState([])
   
   const url = ("https://fakestoreapi.com/products")
@@ -19,6 +25,8 @@ const Products = () => {
     useEffect(() => {
     fetchData()
   }, [])
+
+  
 
 
   return (
