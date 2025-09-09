@@ -9,7 +9,7 @@ import { useState } from 'react'
     const CountContext = createContext()
 
     const BudgetProvider= ({Children}) =>{
-
+    
         const [budgetMode, setBudgetMode] = useState([])
     
         const modBudgetContext = (id) =>{
@@ -17,6 +17,20 @@ import { useState } from 'react'
             setBudgetMode(copy)
         }
 
+        const value = {
+            budgetMode,
+            modBudgetContext
+        }
+
+        return(
+            <CountContext.Provider value={value}>
+                {Children}
+            </CountContext.Provider>
+        )
     }
+
+    export {BudgetProvider}
+
+
 
 
