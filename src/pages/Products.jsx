@@ -26,7 +26,9 @@ const Products = () => {
     fetchData()
   }, [])
 
-  
+  const filteredProducts = budgetMode === true
+  ?products.filter(product=>product.price <= 30)
+  :products
 
 
   return (
@@ -36,11 +38,11 @@ const Products = () => {
 
             {products.map((product)=>{
               return(
-            <div className="col-4 d-flex mt-5" key={product.id}>
+            <div className="col-4 d-flex mt-5" key={filteredProducts.id}>
              <div className="card shadow-sm h-100">
-                <img className="card-img-top p-3" src={product.image}  alt={product.description}/>
+                <img className="card-img-top p-3" src={filteredProducts.image}  alt={filteredProducts.description}/>
                 <div className="card-body ">
-                  <h2 className="card-title "><Link to={`/products/${product.id}`}>{product.title}</Link></h2>
+                  <h2 className="card-title "><Link to={`/products/${filteredProducts.id}`}>{filteredProducts.title}</Link></h2>
                 </div>
               </div>
            </div>
