@@ -1,4 +1,4 @@
-import React, { Children } from 'react'
+
 
 import { createContext, useContext } from 'react'
 
@@ -8,9 +8,9 @@ import { useState } from 'react'
 
     const CountContext = createContext()
 
-    const BudgetProvider= ({Children}) =>{
+    const BudgetProvider= ({children}) =>{
     
-        const [budgetMode, setBudgetMode] = useState([])
+        const [budgetMode, setBudgetMode] = useState(false)
     
         const modBudgetContext = (id) =>{
             const copy = [...budgetMode, id]
@@ -19,12 +19,12 @@ import { useState } from 'react'
 
         const value = {
             budgetMode,
-            modBudgetContext
+            setBudgetMode
         }
 
         return(
             <CountContext.Provider value={value}>
-                {Children}
+                {children}
             </CountContext.Provider>
         )
     }
