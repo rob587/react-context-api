@@ -1,20 +1,22 @@
-import React from 'react'
+import React, { Children } from 'react'
 
 import { createContext, useContext } from 'react'
 
 import { useState } from 'react'
 
-const BudgetContext = () => {
+
 
     const CountContext = createContext()
 
-    const [budgetMode, setBudgetMode] = useState([])
+    const BudgetProvider= ({Children}) =>{
 
-  return (
-    <div>
-      
-    </div>
-  )
-}
+        const [budgetMode, setBudgetMode] = useState([])
+    
+        const modBudgetContext = (id) =>{
+            const copy = [...budgetMode, id]
+            setBudgetMode(copy)
+        }
 
-export default BudgetContext
+    }
+
+
