@@ -29,7 +29,7 @@ import { useState } from 'react'
         )
     }
 
-    export {BudgetProvider}
+    export {BudgetProvider, CountContext}
 
 
 
