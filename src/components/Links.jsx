@@ -1,7 +1,16 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
+import { useState } from 'react'
+
+
 const Links = () => {
+
+    const [isActive, setIsActive] = useState(false)
+
+    const handleClick =() => {
+        setIsActive(!isActive)
+    }
   return (
     <header>
         <div className="container ">
@@ -20,7 +29,7 @@ const Links = () => {
                         <li className="me-4">
                             <NavLink to="/products">I nostri Prodotti</NavLink>
                         </li>
-                        <button className='btn btn-success'>Modalità Budget</button>
+                        <button className='btn btn-success' onClick={handleClick}>{isActive ? 'Disattiva Modalità Budget' : 'Attiva Modalità Budget'}</button>
                     </ul>
                 </div>
             </div>
