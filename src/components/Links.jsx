@@ -20,6 +20,7 @@ const Links = () => {
                         <li className="me-4">
                             <NavLink to="/products">I nostri Prodotti</NavLink>
                         </li>
+                        <button className='btn btn-success'>Modalità Budget</button>
                     </ul>
                 </div>
             </div>
