@@ -43,6 +43,7 @@ const Products = () => {
                 <img className="card-img-top p-3" src={product.image}  alt={product.description}/>
                 <div className="card-body ">
                   <h2 className="card-title "><Link to={`/products/${product.id}`}>{product.title}</Link></h2>
+                  <p className='fw-bold fs-5'>{product.price}$</p>
                 </div>
               </div>
            </div>
